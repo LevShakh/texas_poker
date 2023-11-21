@@ -4,26 +4,23 @@ import java.util.LinkedList;
 
 public class Poker {
 	
-	private final byte TABLE_CARDS = 5;
-	private final byte PLAYER_HAND = 2;
-	
 	public void play(LinkedList<Entity> players) {
 		
 		Cards deck = new Cards();
 		
-		Table table = new Table();
+		LinkedList<Entity> table = new LinkedList<>();
+		
+		table.add(new Table());
 		
 		giveCard(players, deck);
 		
-		for(int i = 0; i < TABLE_CARDS; i++) {
-			table.setCard(deck.setRandomCard());
-		}
+		giveCard(table, deck);
 		
 		System.out.println("TABLE:");
-		table.getCards();
+		table.get(0).getCards();
 		
 		for(Entity p : players) {
-			Resulter res = new Resulter(p, table);
+			Resulter res = new Resulter(p, table.get(0));
 			
 			System.out.println("\nPlayer " + (players.indexOf(p) + 1) + ":");
 			p.getCards();
@@ -32,29 +29,16 @@ public class Poker {
 		}
 	}
 	
-	private void giveCard(LinkedList<? extends Entity> players, Cards deck) {
+	private void giveCard(LinkedList<Entity> players, Cards deck) {
 		for(Entity p : players) {
-			for(int i = 0; i < PLAYER_HAND; i++) {
+			for(int i = 0; i < p.cardnum; i++) {
 				p.setCard(deck.setRandomCard());
 			}
 			
 		}
 	}
 	
-//	private void giveCard(List<? extends Entity> players, Cards deck) {
-//	for(Entity p : players) {
-//		for(int i = 0; i < PLAYER_HAND; i++) {
-//			p.setCard(deck.setRandomCard());
-//		}
-//		
-//	}
-//}
-	
-	public Poker() {
-
-	}
-
-	}
+}
 
 	
 	

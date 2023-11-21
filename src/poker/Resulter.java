@@ -15,7 +15,7 @@ public class Resulter {
 //	private boolean isstraightflush = false;
 //	private boolean isroyal = false;
 	
-	public Resulter(Entity p, Table t) {
+	public Resulter(Entity p, Entity t) {
 		int i = 0;
 		
 		Player pl = (Player)p;

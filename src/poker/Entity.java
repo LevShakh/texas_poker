@@ -6,9 +6,9 @@ public class Entity {
 	
 	ArrayList<String> cards = new ArrayList<String>();
 	
-	byte cardnum;
+	protected byte cardnum;
 	
-	byte inhands = 0;
+	protected byte inhands = 0;
 	
 	public Entity() {
 		this.cardnum = 0;
