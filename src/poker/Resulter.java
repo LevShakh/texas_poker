@@ -18,12 +18,6 @@ public class Resulter {
 	public Resulter(Entity p, Entity t) {
 		int i = 0;
 		
-		Player pl = (Player)p;
-		
-		p.cardnum = pl.getCardNumToParent();
-		
-		
-		
 		while(i < 5) {
 			cards[i] = t.getCard(i);
 			i++;
