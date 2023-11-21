@@ -9,17 +9,17 @@ public class Main {
 		
 		Poker pokergame = new Poker();
 		
-		LinkedList<Player> players = new LinkedList<Player>();
+		LinkedList<Entity> players = new LinkedList<Entity>();
 		
-		Player p1 = new Player();
-		Player p2 = new Player();
-		Player p3 = new Player();
-		Player p4 = new Player();
-		Player p5 = new Player();
-		Player p6 = new Player();
-		Player p7 = new Player();
-		Player p8 = new Player();
-		Player p9 = new Player();
+		Entity p1 = new Player();
+		Entity p2 = new Player();
+		Entity p3 = new Player();
+		Entity p4 = new Player();
+		Entity p5 = new Player();
+		Entity p6 = new Player();
+		Entity p7 = new Player();
+		Entity p8 = new Player();
+		Entity p9 = new Player();
 		
 		
 		players.add(p1);
@@ -31,6 +31,12 @@ public class Main {
 		players.add(p7);
 		players.add(p8);
 		players.add(p9);
+		
+//		players.get(0).iam();
+//		
+//		Player pl = (Player)players.get(0);
+//		
+//		pl.iam();
 		
 		pokergame.play(players);
 		

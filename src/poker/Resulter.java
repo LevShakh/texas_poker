@@ -12,11 +12,17 @@ public class Resulter {
 	private boolean four = false;
 	private boolean isflush = false;
 	private boolean isstraight = false;
-	private boolean isstraightflush = false;
-	private boolean isroyal = false;
+//	private boolean isstraightflush = false;
+//	private boolean isroyal = false;
 	
-	public Resulter(Player p, Table t) {
+	public Resulter(Entity p, Table t) {
 		int i = 0;
+		
+		Player pl = (Player)p;
+		
+		p.cardnum = pl.getCardNumToParent();
+		
+		
 		
 		while(i < 5) {
 			cards[i] = t.getCard(i);

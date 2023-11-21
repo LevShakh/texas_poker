@@ -3,43 +3,27 @@ package poker;
 public class Player extends Entity {
 	
 	private byte inhands = 0;
+	private byte cardnum = 2;
 	
 	private String[] cards = new String[2];
 	
 	public Player() {
-//		cards[0] = Poker.setRandomCard();
-//		cards[1] = Poker.setRandomCard();
+		super.cardnum = this.cardnum;
 	}
 	
-	byte getInHandsFromChild() {
-		return inhands;
+	protected byte getInHandsToParent() {
+		return this.inhands;
 	}
 	
-	String[] getCardsFromChild() {
-		return cards;
+	protected String[] getCardsToParent() {
+		return this.cards;
 	}
 	
-	public void getCards() {
-		
-		for(int i = 0; i < cards.length; i++) {
-			System.out.print(cards[i] + "   ");
-		}
-		System.out.print("\n");
-		
+	protected byte getCardNumToParent() {
+		return this.cardnum;
 	}
 	
-	public String getCard(int i) {
-		return cards[i];
-	}
-	
-	public void setCard(String card) {
-		if(inhands < 5) {
-			cards[inhands] = card;
-			inhands++;
-		}
-	}
-	
-	public void nullHand() {
-		this.inhands = 0;
+	public void iam() {
+		System.out.println("I AM PLAYER");
 	}
 }

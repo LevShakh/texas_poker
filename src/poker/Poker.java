@@ -1,6 +1,5 @@
 package poker;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Poker {
@@ -8,7 +7,7 @@ public class Poker {
 	private final byte TABLE_CARDS = 5;
 	private final byte PLAYER_HAND = 2;
 	
-	public void play(LinkedList<Player> players) {
+	public void play(LinkedList<Entity> players) {
 		
 		Cards deck = new Cards();
 		
@@ -23,7 +22,7 @@ public class Poker {
 		System.out.println("TABLE:");
 		table.getCards();
 		
-		for(Player p : players) {
+		for(Entity p : players) {
 			Resulter res = new Resulter(p, table);
 			
 			System.out.println("\nPlayer " + (players.indexOf(p) + 1) + ":");
@@ -33,8 +32,8 @@ public class Poker {
 		}
 	}
 	
-	private void giveCard(LinkedList<Player> players, Cards deck) {
-		for(Player p : players) {
+	private void giveCard(LinkedList<? extends Entity> players, Cards deck) {
+		for(Entity p : players) {
 			for(int i = 0; i < PLAYER_HAND; i++) {
 				p.setCard(deck.setRandomCard());
 			}
