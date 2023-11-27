@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 public class Cards {
 	
+	
 	private static final Character[] array = {'2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'};
 	
 	public static final List<Character> CARDS = new ArrayList<Character>(Arrays.asList(array));
@@ -24,6 +25,11 @@ public class Cards {
 			new String(Character.toChars(0x2660)), 
 			new String(Character.toChars(0x2663))};
 	
+	/**
+	 * Takes index of cards array and returns a suit for a card
+	 * @param i index of Cards.cards array
+	 * @return suit of the card as String. Diamond, Heart, Spade or Clove 
+	 */
 	private String setSuit(int i) {
 		switch(i / quantity) {
 			case 0:
@@ -39,6 +45,12 @@ public class Cards {
 		}
 	}
 	
+	/**
+	 * Sets random card from cards array. It takes a value from cards array and invokes setSuit() 
+	 * method to designate a suit. Returns string of card. Example "5 ♦". Taken card takes "-" value. This means
+	 * that this card is used already. It cant be given twice or more
+	 * @return String card. Example "5 ♦"
+	 */
 	public String setRandomCard() {
 		String card = "";
 		int i;
@@ -54,6 +66,13 @@ public class Cards {
 		return card;
 	}
 	
+	/**
+	 * Sorts list of cards. It is used to sort seven cards when Resulter is in work. 
+	 * It sorts table's and player's cards by card rank according to CARDS List.
+	 * Sorting is like 2, 3, 4, 5, 6, 7, 8, 9, T (Ten), J (Jack), Q (Queen), K (King), A (Ace)
+	 * @param mas List of cards to be sorted
+	 * @return Sorted list of cards
+	 */
 	public static List<String> sortCards(List<String> mas) {
 		
 		List<String> res = new LinkedList<String>();

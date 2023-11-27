@@ -5,6 +5,13 @@ import java.util.List;
 
 public class Poker {
 	
+	/**
+	 * Main function of the Poker game. It generates a card deck, invokes giveCard() method
+	 * which gives cards to table and to every player from players List.
+	 * Creates and invokes a Resulter class for scaling the combinations
+	 * of players' hands. Outputs results.
+	 * @param players List of entities who play poker
+	 */
 	public void play(List<Entity> players) {
 		
 		Cards deck = new Cards();
@@ -30,6 +37,11 @@ public class Poker {
 		}
 	}
 	
+	/**
+	 * Gives card from deck to Entity (either player or table)
+	 * @param players List of players of list of one single table
+	 * @param deck Takes card deck of Cards deck
+	 */
 	private void giveCard(List<Entity> players, Cards deck) {
 		for(Entity p : players) {
 			for(int i = 0; i < p.cardnum; i++) {

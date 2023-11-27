@@ -19,8 +19,13 @@ public class Resulter {
 //	private boolean isstraightflush = false;
 //	private boolean isroyal = false;
 	
+	/**
+	 * When initiated, it does instantly pull cards of player and table.
+	 * This cards are getting observed to get the highest combination of cards
+	 * @param p
+	 * @param t
+	 */
 	public Resulter(Entity p, Entity t) {
-		int i = 0;
 		
 		cards.addAll(p.getCardsList());
 		cards.addAll(t.getCardsList());
@@ -32,51 +37,6 @@ public class Resulter {
 		
 		isFlush();
 		isStraight();
-		
-//		getCards();
-//		values = Cards.sortCards(values);
-//		Arrays.sort(suits);
-	}
-	
-	public Resulter() {
-		char[] values1 = new char[] {'2', '3', '4', '5', '6', 'A', '7'};
-		
-		
-		
-//		if(isStraight()) System.out.println("Straight");
-		
-		for(int i = 0; i < values1.length; i++) {
-			
-			if( i < 6 && values1[i] == values1[i+1] && pairs < 2) {
-				pairs++;
-				i++;
-			}
-			
-			if(i < 5 && values1[i] == values1[i+1]) {
-				three = true;
-				pairs--;
-				i++;
-			}
-			
-			if(i < 4 && values1[i] == values1[i+1]) {
-				four = true;
-				three = false;
-			}
-		}
-			
-			
-			
-		if(four) System.out.println("Four of a kind");
-		
-		else if(pairs != 0 && three) System.out.println("Full house");
-		
-		else if(three) System.out.println("Three of a kind");
-		
-		else if(pairs==1) System.out.println("One pair"); 
-
-		else if(pairs==2) System.out.println("Two pairs");
-		
-		else System.out.println("High card");
 	}
 	
 //	private void isRoyal() {
@@ -94,6 +54,9 @@ public class Resulter {
 //		
 //	}
 	
+	/**
+	 * Observes if there a straight combination
+	 */
 	private void isStraight() {
 		
 		byte straight = 0;
@@ -121,6 +84,9 @@ public class Resulter {
 		}
 	}
 	
+	/**
+	 * Observes if there is a Flush
+	 */
 	private void isFlush() {
 		for(int i = 0; i < 4; i++) {
 			if(i < MAX_CARDS - i - 1 && suits.get(i) == suits.get(i+1) &&
@@ -132,6 +98,9 @@ public class Resulter {
 		}
 	}
 	
+	/**
+	 * Sets ranks and suits of cards to another Lists
+	 */
 	private void setValues() {
 		for(String card : cards) {
 			values.add(card.charAt(0));
@@ -164,6 +133,10 @@ public class Resulter {
 		System.out.print("\n");
 	}
 	
+	/**
+	 * Searches pairs, threes, fours and fullhouses. Returns final combinations
+	 * @return Combination
+	 */
 	public String getCombs() {
 		
 		for(int i = 0; i < values.size(); i++) {

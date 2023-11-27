@@ -1,28 +1,19 @@
 package poker;
 
 public class Player extends Entity {
-	
-	private byte inhands = 0;
+
 	private byte cardnum = 2;
 	
-	private String[] cards = new String[2];
-	
+	/**
+	 * This constructor sets Player's max card quantity (cardnum) to superclass Entity
+	 */
 	public Player() {
 		super.cardnum = this.cardnum;
 	}
 	
-	protected byte getInHandsToParent() {
-		return this.inhands;
-	}
-	
-	protected String[] getCardsToParent() {
-		return this.cards;
-	}
-	
-	protected byte getCardNumToParent() {
-		return this.cardnum;
-	}
-	
+	/**
+	 * EDUCATIONAL METHOD
+	 */
 	public void iam() {
 		System.out.println("I AM PLAYER");
 	}
