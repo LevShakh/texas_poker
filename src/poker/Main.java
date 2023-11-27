@@ -1,6 +1,7 @@
 package poker;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class Main {
 
@@ -9,7 +10,7 @@ public class Main {
 		
 		Poker pokergame = new Poker();
 		
-		LinkedList<Entity> players = new LinkedList<Entity>();
+		List<Entity> players = new LinkedList<Entity>();
 		
 		Entity p1 = new Player();
 		Entity p2 = new Player();

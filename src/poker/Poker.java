@@ -1,10 +1,11 @@
 package poker;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class Poker {
 	
-	public void play(LinkedList<Entity> players) {
+	public void play(List<Entity> players) {
 		
 		Cards deck = new Cards();
 		
@@ -29,7 +30,7 @@ public class Poker {
 		}
 	}
 	
-	private void giveCard(LinkedList<Entity> players, Cards deck) {
+	private void giveCard(List<Entity> players, Cards deck) {
 		for(Entity p : players) {
 			for(int i = 0; i < p.cardnum; i++) {
 				p.setCard(deck.setRandomCard());
