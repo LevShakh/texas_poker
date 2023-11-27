@@ -1,8 +1,14 @@
 package poker;
 
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Cards {
 	
-	public static final char[] CARDS = new char[] {'2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'};
+	private static final Character[] array = {'2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'};
+	
+	public static final List<Character> CARDS = new ArrayList<Character>(Arrays.asList(array));
 	
 	private char[] cards = new char[]
 			{'2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A',
@@ -53,9 +59,9 @@ public class Cards {
 		
 		String[] res = new String[7];
 		
-		for(int i = 0; i < CARDS.length; i++) {
+		for(int i = 0; i < CARDS.size(); i++) {
 			for(int j = 0; j < mas.length; j++) {
-				if(CARDS[i] == mas[j].charAt(0)) res[el++] = mas[j];
+				if(CARDS.get(i) == mas[j].charAt(0)) res[el++] = mas[j];
 			}
 		}
 		

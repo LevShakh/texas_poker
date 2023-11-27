@@ -98,14 +98,14 @@ public class Resulter {
 	private void isStraight() {
 		
 		byte straight = 0;
-		boolean istwoace = values[0] == Cards.CARDS[0] && values[values.length - 1] == Cards.CARDS[Cards.CARDS.length - 1] ? true : false;
+		boolean istwoace = values[0] == Cards.CARDS.get(0) && values[values.length - 1] == Cards.CARDS.get(Cards.CARDS.size() - 1) ? true : false;
 		
 		
-		for(int i = 0; i < Cards.CARDS.length; i++) {
+		for(int i = 0; i < Cards.CARDS.size(); i++) {
 			byte jmp = 0;
 			for(int j = 0 + jmp; j < values.length; j++) {
 				
-				if(i+straight < Cards.CARDS.length && values[j] == Cards.CARDS[i+straight] && straight < 5) {
+				if(i+straight < Cards.CARDS.size() && values[j] == Cards.CARDS.get(i+straight) && straight < 5) {
 					straight++;
 				}
 				
