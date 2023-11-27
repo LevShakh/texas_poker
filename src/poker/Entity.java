@@ -1,10 +1,11 @@
 package poker;
 
+import java.util.List;
 import java.util.ArrayList;
 
 public class Entity {
 	
-	ArrayList<String> cards = new ArrayList<String>();
+	private List<String> cards = new ArrayList<String>();
 	
 	protected byte cardnum;
 	
@@ -23,6 +24,10 @@ public class Entity {
 		
 	}
 	
+	public List<String> getCardsList() {
+		return this.cards;
+	}
+	
 	public String getCard(int i) {
 		return cards.get(i);
 	}
@@ -36,6 +41,7 @@ public class Entity {
 	
 	public void nullHand() {
 		this.inhands = 0;
+		cards.clear();
 	}
 	
 	public void iam() {

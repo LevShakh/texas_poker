@@ -39,6 +39,14 @@ public class Main {
 //		
 //		pl.iam();
 		
+//		List<Entity> pl = new LinkedList<>();
+//		pl.add(p1);
+//		
+//		for(int i = 0; i < 1000; i++) {
+//			pokergame.play(pl);
+//			pl.get(0).nullHand();
+//		}
+		
 		pokergame.play(players);
 		
 		

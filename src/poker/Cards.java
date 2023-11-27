@@ -1,6 +1,7 @@
 package poker;
 
 import java.util.List;
+import java.util.LinkedList;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -53,15 +54,15 @@ public class Cards {
 		return card;
 	}
 	
-	public static String[] sortCards(String[] mas) {
+	public static List<String> sortCards(List<String> mas) {
 		
-		byte el = 0;
-		
-		String[] res = new String[7];
+		List<String> res = new LinkedList<String>();
 		
 		for(int i = 0; i < CARDS.size(); i++) {
-			for(int j = 0; j < mas.length; j++) {
-				if(CARDS.get(i) == mas[j].charAt(0)) res[el++] = mas[j];
+			for(int j = 0; j < mas.size(); j++) {
+				if(CARDS.get(i) == mas.get(j).charAt(0)) {
+					res.add(mas.get(j));
+				}
 			}
 		}
 		
