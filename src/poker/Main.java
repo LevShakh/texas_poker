@@ -1,6 +1,6 @@
 package poker;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -10,7 +10,7 @@ public class Main {
 		
 		Poker pokergame = new Poker();
 		
-		List<Entity> players = new LinkedList<Entity>();
+		List<Entity> players = new ArrayList<Entity>();
 		
 		Entity p1 = new Player();
 		Entity p2 = new Player();
@@ -26,12 +26,12 @@ public class Main {
 		players.add(p1);
 		players.add(p2);
 		players.add(p3);
-		players.add(p4);
-		players.add(p5);
-		players.add(p6);
-		players.add(p7);
-		players.add(p8);
-		players.add(p9);
+//		players.add(p4);
+//		players.add(p5);
+//		players.add(p6);
+//		players.add(p7);
+//		players.add(p8);
+//		players.add(p9);
 		
 //		players.get(0).iam();
 //		

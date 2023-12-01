@@ -1,9 +1,11 @@
 package poker;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Poker {
+	
+	private List<String> stages = new ArrayList<>();
 	
 	/**
 	 * Main function of the Poker game. It generates a card deck, invokes giveCard() method
@@ -14,9 +16,11 @@ public class Poker {
 	 */
 	public void play(List<Entity> players) {
 		
+		fillStages();
+		
 		Cards deck = new Cards();
 		
-		LinkedList<Entity> table = new LinkedList<>();
+		ArrayList<Entity> table = new ArrayList<>();
 		
 		table.add(new Table());
 		
@@ -49,6 +53,13 @@ public class Poker {
 			}
 			
 		}
+	}
+	
+	private void fillStages() {
+		stages.add("Init");
+		stages.add("Flop");
+		stages.add("Turn");
+		stages.add("River");
 	}
 	
 }
